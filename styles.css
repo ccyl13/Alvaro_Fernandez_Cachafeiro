@@ -1,155 +1,154 @@
-/* GENERAL */
-* {
+/* styles.css */
+
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body, html {
-  height: 100%;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0e0e0e;
   color: white;
-  background: #0e0e0e;
   overflow-x: hidden;
 }
+
+canvas#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .container {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
 }
-canvas#background {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  background: #0e0e0e;
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #fffbcc;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px #fffbcc;
 }
 
-/* PERFIL */
-.profile-pic {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 4px solid #f1c40f;
-  box-shadow: 0 0 25px 5px #f1c40f;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
 .subtitle {
   font-size: 1rem;
-  font-weight: 300;
-  margin-bottom: 2rem;
-  color: #ddd;
-}
-
-/* RECOMENDACIONES */
-.recommendations h2 {
-  margin-bottom: 1.5rem;
-}
-.carousel {
-  position: relative;
-  overflow: hidden;
-  height: auto;
-}
-.slide {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.6s ease;
-}
-.slide.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-.stars {
-  color: #f1c40f;
-  font-size: 1.1rem;
-  margin-left: 0.5rem;
-}
-.quote {
-  margin-top: 1rem;
-  font-style: italic;
   color: #ccc;
 }
 
-/* PROYECTO */
-.project {
+.recommendations h2,
+.project h2,
+.contact h2 {
   margin-top: 3rem;
-}
-.project-card {
-  background: rgba(255,255,255,0.05);
-  padding: 2rem;
-  border-radius: 1rem;
-  margin-top: 1rem;
-}
-.button {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #f1c40f;
-  border: none;
-  border-radius: 5px;
-  color: #111;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-.button:hover {
-  background: #ffd700;
+  font-size: 1.5rem;
+  color: white;
 }
 
-/* CONTACTO */
-.contact {
-  margin-top: 3rem;
+.carousel {
+  margin: 2rem auto;
+  max-width: 700px;
+  position: relative;
+  height: auto;
 }
+
+.slide {
+  display: none;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.slide.active {
+  display: block;
+}
+
+.stars {
+  color: #f0db4f;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.quote {
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.button {
+  display: inline-block;
+  background: #f0db4f;
+  border: none;
+  color: black;
+  padding: 0.5rem 1.2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #e5cb32;
+}
+
 .contact-buttons {
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: center;
-  gap: 0.8rem;
-  margin-top: 1rem;
 }
+
 .contact-buttons button {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #555;
-  padding: 0.5rem 1.2rem;
+  background: none;
+  border: 1px solid #f0db4f;
   color: white;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s;
 }
+
 .contact-buttons button:hover {
-  background: #f1c40f;
-  color: #111;
+  background: #f0db4f;
+  color: black;
 }
+
 .phone-hidden {
   margin-top: 1rem;
+  color: #f0db4f;
   font-weight: bold;
   display: none;
 }
 
-/* FOOTER */
 footer {
-  margin-top: 4rem;
-  font-size: 0.85rem;
-  color: #aaa;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #888;
 }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .profile-pic {
-    width: 100px;
-    height: 100px;
+@media screen and (max-width: 768px) {
+  .carousel {
+    padding: 0 1rem;
   }
-  .subtitle {
-    font-size: 0.9rem;
-  }
+
   .slide {
-    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .project-card {
+    margin: 1rem 0;
   }
 }
