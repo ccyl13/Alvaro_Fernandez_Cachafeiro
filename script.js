@@ -1,4 +1,3 @@
-// Recomendaciones (TODAS las que me pasaste)
 const recommendations = [
   `“Tuve el honor de coincidir con este pedazo de profesional hace poco más de un año...” – Thomas O’Neil`,
   `“Álvaro ha gestionado mi candidatura para un proceso de selección en Ayesa...” – Lola Fernández Fuentes`,
@@ -35,51 +34,28 @@ const recommendations = [
 ];
 
 let currentIndex = 0;
-const recommendationText = document.getElementById("recommendation-text");
+const recommendationText = document.getElementById('recommendation-text');
 
-function updateRecommendation() {
+function showRecommendation() {
   recommendationText.textContent = recommendations[currentIndex];
   currentIndex = (currentIndex + 1) % recommendations.length;
 }
-updateRecommendation();
-setInterval(updateRecommendation, 6000);
 
-// Botones Email y Teléfono
-document.getElementById("email-btn").addEventListener("click", () => {
-  const email = document.getElementById("email");
-  email.style.display = "block";
-  setTimeout(() => (email.style.display = "none"), 10000);
+setInterval(showRecommendation, 6000);
+showRecommendation();
+
+function showTempText(id) {
+  const element = document.getElementById(id);
+  element.style.display = 'block';
+  setTimeout(() => {
+    element.style.display = 'none';
+  }, 10000);
+}
+
+document.getElementById('phone-btn').addEventListener('click', () => {
+  showTempText('phone');
 });
 
-document.getElementById("phone-btn").addEventListener("click", () => {
-  const phone = document.getElementById("phone");
-  phone.style.display = "block";
-  setTimeout(() => (phone.style.display = "none"), 10000);
-});
-
-// Partículas
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 100, density: { enable: true, value_area: 800 } },
-    color: { value: "#f0db4f" },
-    shape: { type: "circle" },
-    opacity: { value: 0.5 },
-    size: { value: 2 },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#f0db4f",
-      opacity: 0.4,
-      width: 1
-    },
-    move: { enable: true, speed: 1 }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: false },
-      onclick: { enable: false }
-    }
-  },
-  retina_detect: true
+document.getElementById('email-btn').addEventListener('click', () => {
+  showTempText('email');
 });
