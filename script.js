@@ -1,35 +1,7 @@
 // Partículas de fondo
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 80 },
-    color: { value: "#f0db4f" },
-    shape: { type: "circle" },
-    opacity: { value: 0.6 },
-    size: { value: 3 },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#f0db4f",
-      opacity: 0.4,
-      width: 1
-    },
-    move: { enable: true, speed: 1 }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: true, mode: "repulse" },
-      onclick: { enable: true, mode: "push" }
-    },
-    modes: {
-      repulse: { distance: 100 },
-      push: { particles_nb: 4 }
-    }
-  },
-  retina_detect: true
-});
+particlesJS.load('particles-js', 'particles.json');
 
-// Reseñas automáticas
+// Recomendaciones rotatorias
 const recommendations = [
   `“Tuve el honor de coincidir con este pedazo de profesional hace poco más de un año...” – Thomas O’Neil`,
   `“Álvaro ha gestionado mi candidatura para un proceso de selección en Ayesa...” – Lola Fernández Fuentes`,
@@ -65,22 +37,25 @@ const recommendations = [
   `“Su visión estratégica resulta muy inspiradora...” – Lucia Sarasola`
 ];
 
-let index = 0;
-const recommendationElement = document.getElementById("recommendation");
+let currentIndex = 0;
+const recommendationBox = document.getElementById('recommendation-text');
 
 function showNextRecommendation() {
-  recommendationElement.innerText = recommendations[index];
-  index = (index + 1) % recommendations.length;
+  recommendationBox.innerText = recommendations[currentIndex];
+  currentIndex = (currentIndex + 1) % recommendations.length;
 }
 
-setInterval(showNextRecommendation, 6000);
 showNextRecommendation();
+setInterval(showNextRecommendation, 6000);
 
-// Mostrar teléfono o email por 10 segundos
-function showInfo(id) {
+// Mostrar teléfono y correo temporalmente
+function showTemp(id) {
   const el = document.getElementById(id);
   el.style.display = "block";
   setTimeout(() => {
     el.style.display = "none";
   }, 10000);
 }
+
+document.getElementById("phone-btn").addEventListener("click", () => showTemp("phone"));
+document.getElementById("email-btn").addEventListener("click", () => showTemp("email"));
