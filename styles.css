@@ -1,160 +1,149 @@
-/* Estilos globales */
+/* Fuente e inicio general */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #0c0c0c;
-  color: #fff;
-  overflow-x: hidden;
+  background-color: #0d0d0d;
+  color: white;
+  background-image: url("https://i.ibb.co/5RcNwnt/neural-bg.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-h1, h2, h3 {
-  margin: 0.5em 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-/* Fondo dinámico con partículas */
+/* Header */
 .hero {
-  position: relative;
   text-align: center;
-  padding: 5em 1em 3em;
-  background: radial-gradient(circle, rgba(255,255,255,0.01) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-color: #0c0c0c;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-  opacity: 0.03;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero-content {
+  padding: 80px 20px 40px;
   position: relative;
-  z-index: 2;
 }
 
 .profile-pic {
   width: 140px;
   height: 140px;
   border-radius: 50%;
+  border: 3px solid #f0db4f;
   object-fit: cover;
-  border: 3px solid white;
-  margin-bottom: 1em;
+  box-shadow: 0 0 20px #f0db4f;
 }
 
-.glow {
-  box-shadow: 0 0 25px 5px #f0db4f;
+.hero h1 {
+  font-size: 2.8rem;
+  margin: 20px 0 10px;
 }
 
-.social-links a {
-  color: #f0db4f;
-  font-size: 1.5em;
-  margin: 0 10px;
-  transition: transform 0.3s;
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
-.social-links a:hover {
-  transform: scale(1.2);
-}
-
-/* Slides de recomendaciones */
+/* Slider de recomendaciones */
 .recomendaciones {
+  max-width: 700px;
+  margin: 50px auto;
   text-align: center;
-  padding: 3em 1em;
 }
 
-.slide {
+.testimonio {
   display: none;
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.slide.active {
+.testimonio.active {
   display: block;
 }
 
+.testimonio h3 {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.testimonio .puesto {
+  font-weight: 500;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.testimonio p.texto {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 15px 0;
+}
+
 .estrellas {
-  color: gold;
-  font-size: 1.2em;
+  color: #f0db4f;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-.slide-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-  margin-top: 1em;
-}
-
-.slide-buttons button {
+/* Botones slider */
+.controles-slider button {
   background-color: #f0db4f;
   border: none;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* Proyecto destacado */
-.proyecto {
-  padding: 2em;
-  text-align: center;
-  background-color: #111;
-}
-
-.boton-proyecto {
-  background-color: #f0db4f;
   color: #000;
-  padding: 0.7em 1.5em;
+  font-weight: bold;
+  padding: 8px 18px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.controles-slider button:hover {
+  background-color: #fff176;
+}
+
+/* Proyecto */
+.proyecto {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.proyecto .boton-proyecto {
+  background-color: #f0db4f;
+  color: black;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 6px;
   display: inline-block;
-  margin-top: 1em;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.proyecto .boton-proyecto:hover {
+  background-color: #fff176;
 }
 
 /* Contacto */
 .contacto {
-  padding: 3em 1em;
   text-align: center;
-  background-color: #0e0e0e;
+  padding: 60px 20px 40px;
 }
 
 .contacto h2 {
-  margin-bottom: 1em;
+  margin-bottom: 25px;
 }
 
-.contacto-buttons {
+.contacto .botones-contacto {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 12px;
 }
 
-.contacto-buttons a {
-  background-color: #1c1c1c;
-  border: 1px solid #f0db4f;
-  color: #fff;
-  padding: 0.7em 1.2em;
-  border-radius: 5px;
+.contacto .botones-contacto a {
+  background-color: transparent;
+  border: 2px solid #f0db4f;
+  color: #f0db4f;
   text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  transition: background 0.3s;
+  transition: 0.3s ease;
 }
 
-.contacto-buttons a:hover {
+.contacto .botones-contacto a:hover {
   background-color: #f0db4f;
   color: #000;
 }
@@ -162,20 +151,8 @@ ul {
 /* Footer */
 footer {
   text-align: center;
-  padding: 1em;
+  padding: 20px;
   background-color: #0a0a0a;
+  font-size: 0.9rem;
   color: #666;
-  font-size: 0.9em;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .contacto-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .slide-buttons {
-    flex-direction: column;
-  }
 }
