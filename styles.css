@@ -1,59 +1,9 @@
-/* General */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0a0a0a;
+  background: #0d0d0d;
   color: #fff;
   overflow-x: hidden;
-}
-
-h1, h2 {
-  margin: 0.5em 0;
-  text-align: center;
-  color: #fff;
-}
-
-.container {
-  text-align: center;
-  padding: 2em;
-}
-
-button {
-  margin: 0.5em;
-  padding: 0.7em 1.2em;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #f0db4f;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #f0db4f;
-  color: #0a0a0a;
-}
-
-.contact-info {
-  margin-top: 1em;
-  font-size: 1em;
-  color: #f0db4f;
-}
-
-.hidden {
-  display: none;
-}
-
-#recommendations {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 1em;
-  background-color: #111;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #f0db4f30;
-  min-height: 160px;
-  transition: opacity 1s ease-in-out;
 }
 
 canvas#background {
@@ -63,24 +13,110 @@ canvas#background {
   z-index: -1;
 }
 
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #f0db4f;
+  box-shadow: 0 0 15px #f0db4f;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.recommendation-card {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(240, 219, 79, 0.2);
+  font-style: italic;
+}
+
+.project-card {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(240, 219, 79, 0.2);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: #f0db4f;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #e6c944;
+}
+
+.contact-buttons {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-buttons button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #f0db4f;
+  background: transparent;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-buttons button:hover {
+  background: #f0db4f;
+  color: #000;
+}
+
+.hidden-info {
+  margin: 0.5rem 0;
+  font-weight: normal;
+  display: none;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
 /* Responsive */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5em;
+@media screen and (max-width: 600px) {
+  .profile-pic {
+    width: 120px;
+    height: 120px;
   }
 
-  .container {
-    padding: 1em;
+  .recommendation-card, .project-card {
+    font-size: 0.95rem;
   }
 
-  #recommendations {
-    margin: 1em;
-    padding: 1em;
-  }
-
-  button {
-    width: 90%;
-    margin: 0.5em auto;
-    display: block;
+  .contact-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
