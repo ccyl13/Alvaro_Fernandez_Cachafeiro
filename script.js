@@ -1,20 +1,22 @@
-// script.js
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
+const testimonios = document.querySelectorAll(".testimonio");
+let indiceActual = 0;
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
+function mostrarTestimonio(index) {
+  testimonios.forEach((t, i) => {
+    t.classList.toggle("active", i === index);
   });
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
+document.getElementById("siguiente").addEventListener("click", () => {
+  indiceActual = (indiceActual + 1) % testimonios.length;
+  mostrarTestimonio(indiceActual);
+});
 
-// Auto cambiar cada 6 segundos
-setInterval(nextSlide, 6000);
+document.getElementById("anterior").addEventListener("click", () => {
+  indiceActual = (indiceActual - 1 + testimonios.length) % testimonios.length;
+  mostrarTestimonio(indiceActual);
+});
 
-// Mostrar la primera slide inicialmente
-showSlide(currentSlide);
+// Mostrar primero al cargar
+mostrarTestimonio(indiceActual);
+
