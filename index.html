@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Álvaro Fernández Cachafeiro</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a2c215ab7c.js" crossorigin="anonymous"></script>
 </head>
@@ -14,7 +16,6 @@
     <div class="hero-content">
       <img src="perfil.JPG" alt="Álvaro Fernández Cachafeiro" class="profile-pic glow">
       <h1>Álvaro Fernández Cachafeiro</h1>
-      <p>Recruiter IT | Ayesa | Conector de Talento</p>
       <p>Consultor de Recursos Humanos | Experto en selección de personal IT</p>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -26,39 +27,45 @@
   <main>
     <section class="recomendaciones">
       <h2>Recomendaciones</h2>
-      <div class="slide active">
-        <h3>Thomas O’neil Álvarez</h3>
-        <p class="puesto">ETHICAL HACKER | RED TEAM – 31 mayo 2025</p>
-        <p class="texto">"Tuve el honor de coincidir con este pedazo de profesional hace poco más de un año... se nota que ama lo que hace. Desde luego contar con Álvaro es signo de garantía."</p>
-        <div class="estrellas">★★★★★</div>
+      <div class="slider">
+        <div class="slide active">
+          <h3>Thomas O’neil Álvarez</h3>
+          <p class="puesto">ETHICAL HACKER | RED TEAM – 31 mayo 2025</p>
+          <p class="texto">"Tuve el honor de coincidir con este pedazo de profesional hace poco más de un año. Se nota que ama lo que hace. Desde luego contar con Álvaro es signo de garantía."</p>
+          <div class="estrellas">★★★★★</div>
+        </div>
+
+        <div class="slide">
+          <h3>Lola Fernández Fuentes</h3>
+          <p class="puesto">RPA Developer – 16 junio 2025</p>
+          <p class="texto">"Álvaro ha gestionado mi candidatura para un proceso de selección con muchísima profesionalidad. Gracias a su forma de trabajar, el proceso ha sido claro, rápido y sencillo. Sin duda, lo recomiendo a cualquiera que quiera desarrollarse en el sector IT."</p>
+          <div class="estrellas">★★★★★</div>
+        </div>
+
+        <div class="slide">
+          <h3>Carlota González Vega</h3>
+          <p class="puesto">ADE + Business Analytics – 16 junio 2025</p>
+          <p class="texto">"He tenido la suerte de contar con Álvaro como coach en mi proceso de entrada al mundo laboral. Me ha ayudado mucho con sus consejos, su cercanía y su actitud positiva. Siempre dispuesto a ayudar, incluso cuando el proceso ha terminado."</p>
+          <div class="estrellas">★★★★★</div>
+        </div>
+
+        <div class="slide">
+          <h3>Maria Barrero Martínez</h3>
+          <p class="puesto">Técnico de selección de personal en Ayesa – 11 junio 2025</p>
+          <p class="texto">"Tengo la suerte de trabajar codo con codo con Álvaro en Ayesa. Es un profesional excelente, comprometido y con un gran conocimiento del sector IT. Sabe cómo conectar con los candidatos y transmitir confianza. Es un referente en el equipo de selección."</p>
+          <div class="estrellas">★★★★★</div>
+        </div>
+
+        <div class="slide">
+          <h3>Óscar Fernández García</h3>
+          <p class="puesto">Data Management Consultant – 9 abril 2025</p>
+          <p class="texto">"Tuve la oportunidad de obtener asesoramiento por parte de Álvaro en el área de recursos humanos y selección. Me brindó una visión clara y honesta del proceso, algo que no siempre es fácil de encontrar. Altamente recomendable como profesional del sector."</p>
+          <div class="estrellas">★★★★★</div>
+        </div>
       </div>
-      <div class="slide">
-        <h3>Lola Fernández Fuentes</h3>
-        <p class="puesto">RPA Developer – 16 junio 2025</p>
-        <p class="texto">"Álvaro ha gestionado mi candidatura para un proceso de selección... Gracias a su forma de trabajar, el proceso ha sido claro, rápido y sencillo."</p>
-        <div class="estrellas">★★★★★</div>
-      </div>
-      <div class="slide">
-        <h3>Carlota González Vega</h3>
-        <p class="puesto">ADE + Business Analytics – 16 junio 2025</p>
-        <p class="texto">"He tenido la suerte de contar con Álvaro como coach en mi proceso de entrada al mundo laboral. Me ha ayudado mucho con sus consejos..."</p>
-        <div class="estrellas">★★★★★</div>
-      </div>
-      <div class="slide">
-        <h3>Maria Barrero Martínez</h3>
-        <p class="puesto">Técnico de selección de personal en Ayesa – 11 junio 2025</p>
-        <p class="texto">"Tengo la suerte de trabajar codo con codo con Álvaro... sabe cómo conectar con los candidatos y transmitir confianza..."</p>
-        <div class="estrellas">★★★★★</div>
-      </div>
-      <div class="slide">
-        <h3>Óscar Fernández García</h3>
-        <p class="puesto">Data Management Consultant – 9 abril 2025</p>
-        <p class="texto">"Tuve la oportunidad de obtener asesoramiento por parte de Álvaro en el área de recursos humanos..."</p>
-        <div class="estrellas">★★★★★</div>
-      </div>
-      <div class="slide-buttons">
-        <button onclick="prevSlide()">Anterior</button>
-        <button onclick="nextSlide()">Siguiente</button>
+      <div class="slider-buttons">
+        <button id="prev">Anterior</button>
+        <button id="next">Siguiente</button>
       </div>
     </section>
 
@@ -70,12 +77,12 @@
 
     <section class="contacto">
       <h2>Contacto</h2>
-      <div class="contacto-buttons">
-        <a href="https://ayesa.com" target="_blank"><i class="fas fa-globe"></i> Sitio web</a>
-        <a href="mailto:alfercacha@hotmail.com"><i class="fas fa-envelope"></i> Email</a>
-        <a href="tel:+34622832752"><i class="fas fa-phone"></i> 622 832 752</a>
-        <a href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://www.instagram.com/caacha97/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <div class="contact-buttons">
+        <a href="https://ayesa.com" target="_blank" class="btn-contact">Sitio web</a>
+        <a href="mailto:alfercacha@hotmail.com" class="btn-contact">Email</a>
+        <a href="tel:+34622832752" class="btn-contact">622 832 752</a>
+        <a href="https://www.linkedin.com/in/alvarofdezcachafeiro/" target="_blank" class="btn-contact">LinkedIn</a>
+        <a href="https://www.instagram.com/caacha97/" target="_blank" class="btn-contact">Instagram</a>
       </div>
     </section>
   </main>
@@ -84,25 +91,6 @@
     <p>&copy; 2025 Álvaro Fernández Cachafeiro</p>
   </footer>
 
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
