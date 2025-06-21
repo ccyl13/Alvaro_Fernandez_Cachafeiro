@@ -5,51 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Álvaro Fernández Cachafeiro</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
 
   <header>
-    <img src="perfil.JPG" alt="Álvaro Fernández Cachafeiro" />
+    <img src="perfil.JPG" alt="Álvaro Fernández Cachafeiro" class="profile-pic" />
     <h1>Álvaro Fernández Cachafeiro</h1>
     <p>Consultor de Recursos Humanos | Experto en selección de personal IT</p>
   </header>
 
-  <section>
+  <main>
     <h2>Recomendaciones</h2>
     <div class="recommendation-box">
       <p id="recommendation-text"></p>
     </div>
-  </section>
 
-  <section>
     <h2>Proyecto destacado</h2>
-    <p>
-      Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.
-    </p>
+    <p>Colaborador en el <strong>curso de marca personal de Thomas O'Neil</strong>, N.º 1 de LinkedIn en España.</p>
     <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank">
       <button>Ver proyecto</button>
     </a>
-  </section>
 
-  <section>
     <h2>Contacto</h2>
     <div class="buttons-container">
-      <button id="website-btn" onclick="window.location.href='https://ayesa.com'">Sitio web</button>
+      <a href="https://www.elrincondelhacker.es" target="_blank"><button>Sitio web</button></a>
       <button id="email-btn">Email</button>
       <button id="phone-btn">Teléfono</button>
-      <button onclick="window.location.href='https://linkedin.com/in/alfercacha'">LinkedIn</button>
-      <button onclick="window.location.href='https://instagram.com'">Instagram</button>
+      <a href="https://www.linkedin.com/in/alfercacha" target="_blank"><button>LinkedIn</button></a>
+      <a href="https://www.instagram.com/alfercacha" target="_blank"><button>Instagram</button></a>
     </div>
-    <p id="email" style="display: none;">alfercacha@hotmail.com</p>
-    <p id="phone" style="display: none;">622 832 752</p>
-  </section>
+    <p id="email" style="display:none;">alfercacha@hotmail.com</p>
+    <p id="phone" style="display:none;">622 832 752</p>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Álvaro Fernández Cachafeiro</p>
+    &copy; 2025 Álvaro Fernández Cachafeiro
   </footer>
 
-  <script src="particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
