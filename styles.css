@@ -1,112 +1,106 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0c0c0c;
-  color: #ffffff;
-  text-align: center;
+  font-family: 'Inter', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-header img {
-  width: 150px;
-  height: 150px;
+img.profile-pic {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #f0db4f;
-  margin-top: 2rem;
   box-shadow: 0 0 20px #f0db4f;
+  margin-top: 20px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin: 1rem 0 0.3rem;
-  color: #ffffff;
+  font-size: 28px;
+  margin: 10px 0 5px;
+  text-align: center;
 }
 
-p {
-  margin: 0.5rem 0;
+.subtitle {
+  font-size: 16px;
   color: #ccc;
-}
-
-h2 {
-  margin-top: 2rem;
-  font-size: 1.5rem;
-  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 10px;
 }
 
 .recommendation-box {
-  margin: 1rem auto;
-  padding: 1.5rem;
   max-width: 90%;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid #f0db4f;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 1rem;
-  box-shadow: 0 0 10px #f0db4f44;
-  min-height: 120px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+#recommendation-text {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#contacto {
+  margin-top: 30px;
+  text-align: center;
 }
 
 .buttons-container {
-  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 button {
-  background-color: transparent;
-  border: 2px solid #f0db4f;
-  color: #f0db4f;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  background-color: #f0db4f;
+  border: none;
+  color: #000;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s;
-  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #f0db4f;
-  color: #0c0c0c;
+  background-color: #ffd60a;
 }
 
-footer {
-  margin-top: 2rem;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #aaa;
+#email,
+#phone {
+  display: none;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f0db4f;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 600px) {
-  header img {
+@media (max-width: 600px) {
+  img.profile-pic {
     width: 120px;
     height: 120px;
   }
 
+  h1 {
+    font-size: 22px;
+  }
+
   .recommendation-box {
-    padding: 1rem;
-    font-size: 0.9rem;
+    padding: 15px;
   }
 
   button {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
+    padding: 8px 14px;
+    font-size: 13px;
   }
 }
