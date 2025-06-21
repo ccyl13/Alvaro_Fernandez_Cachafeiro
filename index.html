@@ -18,15 +18,15 @@
 
     <section class="recommendations">
       <h2>Recomendaciones</h2>
-      <div id="recommendation-box" class="recommendation-card">
-        <!-- Contenido dinámico desde JS -->
+      <div class="carousel">
+        <!-- Las recomendaciones se insertarán dinámicamente desde script.js -->
       </div>
     </section>
 
     <section class="project">
       <h2>Proyecto destacado</h2>
       <div class="project-card">
-        <p><strong>Colaborador en:</strong> Curso de marca personal de Thomas O’Neil (N.º 1 de LinkedIn en España).</p>
+        <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
         <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank" class="button">Ver proyecto</a>
       </div>
     </section>
@@ -35,13 +35,13 @@
       <h2>Contacto</h2>
       <div class="contact-buttons">
         <button onclick="window.open('https://ayesa.com', '_blank')">Sitio web</button>
-        <button onclick="showEmail()">Email</button>
-        <button onclick="showPhone()">Teléfono</button>
+        <button onclick="revealEmail()">Email</button>
+        <button onclick="revealPhone()">Teléfono</button>
         <button onclick="window.open('https://www.linkedin.com/in/alvarofdezcachafeiro/', '_blank')">LinkedIn</button>
         <button onclick="window.open('https://www.instagram.com/caacha97/', '_blank')">Instagram</button>
       </div>
-      <p id="email" class="hidden-info">alfercacha@hotmail.com</p>
-      <p id="phone" class="hidden-info">622 832 752</p>
+      <p id="email" style="display:none;">alfercacha@hotmail.com</p>
+      <p id="phone" style="display:none;">622 832 752</p>
     </section>
 
     <footer>&copy; 2025 Álvaro Fernández Cachafeiro</footer>
