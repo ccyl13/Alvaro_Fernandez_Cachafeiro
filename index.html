@@ -2,47 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Álvaro Fernández Cachafeiro</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <canvas id="background"></canvas>
 
   <div class="container">
-    <div class="profile">
-      <img src="perfil.JPG" alt="Foto de Álvaro" class="profile-pic" />
-      <h1>Álvaro Fernández Cachafeiro</h1>
-      <p class="subtitle">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
+    <img src="perfil.JPG" alt="Foto de Álvaro" class="profile-pic" />
+    <h1>Álvaro Fernández Cachafeiro</h1>
+    <p>Consultor de Recursos Humanos | Experto en selección de personal IT</p>
+
+    <h2>Recomendaciones</h2>
+    <div id="recommendations"></div>
+
+    <h2>Proyecto destacado</h2>
+    <div class="proyecto">
+      <p><strong>Colaborador en:</strong> Curso de marca personal de Thomas O’Neil (N.º 1 de LinkedIn en España).</p>
+      <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank">
+        <button>Ver proyecto</button>
+      </a>
     </div>
 
-    <section class="recommendations">
-      <h2>Recomendaciones</h2>
-      <div class="carousel" id="carousel">
-        <!-- Las recomendaciones se insertarán dinámicamente -->
-      </div>
-    </section>
-
-    <section class="project">
-      <h2>Proyecto destacado</h2>
-      <div class="project-card">
-        <p><strong>Colaborador en:</strong> Curso de marca personal de Thomas O’Neil (N.º 1 de LinkedIn en España).</p>
-        <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank" class="button">Ver proyecto</a>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h2>Contacto</h2>
-      <div class="contact-buttons">
-        <button onclick="window.open('https://ayesa.com', '_blank')">Sitio web</button>
-        <button onclick="revealEmail()">Email</button>
-        <button onclick="revealPhone()">Teléfono</button>
-        <button onclick="window.open('https://www.linkedin.com/in/alvarofdezcachafeiro/', '_blank')">LinkedIn</button>
-        <button onclick="window.open('https://www.instagram.com/caacha97/', '_blank')">Instagram</button>
-      </div>
-      <p id="email" class="hidden-contact">alfercacha@hotmail.com</p>
-      <p id="phone" class="hidden-contact">622 832 752</p>
-    </section>
+    <h2>Contacto</h2>
+    <div class="botones-contacto">
+      <button onclick="window.open('https://ayesa.com', '_blank')">Sitio web</button>
+      <button onclick="toggleContact('email', 'alfercacha@hotmail.com')">Email</button>
+      <button onclick="toggleContact('phone', '622 832 752')">Teléfono</button>
+      <button onclick="window.open('https://www.linkedin.com/in/alvarofdezcachafeiro/', '_blank')">LinkedIn</button>
+      <button onclick="window.open('https://www.instagram.com/caacha97/', '_blank')">Instagram</button>
+    </div>
+    <div class="contact-info hidden" id="email"></div>
+    <div class="contact-info hidden" id="phone"></div>
 
     <footer>&copy; 2025 Álvaro Fernández Cachafeiro</footer>
   </div>
