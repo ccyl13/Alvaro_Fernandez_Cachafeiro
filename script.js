@@ -1,58 +1,69 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Álvaro Fernández Cachafeiro</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <canvas id="background"></canvas>
+// Fondo dinámico estilo conexiones neuronales
+const canvas = document.getElementById("background");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-  <div class="container">
-    <div class="profile">
-      <img src="perfil.JPG" alt="Foto de Álvaro" class="profile-pic" />
-      <h1>Álvaro Fernández Cachafeiro</h1>
-      <p class="subtitle">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
-    </div>
+let particles = [];
 
-    <section class="recommendations">
-      <h2>Recomendaciones</h2>
-      <div class="carousel">
-        <div class="slide active">
-          <p><strong>Carlota González Vega</strong> <span class="stars">★★★★★</span><br><small>ADE + Business Analytics – 16 junio 2025</small></p>
-          <p class="quote">"<em>He tenido la suerte de contar con Álvaro como coach en mi proceso de entrada al mundo laboral. Me ha ayudado mucho con sus consejos, su cercanía y su actitud positiva. Siempre dispuesto a ayudar, incluso cuando el proceso ha terminado.</em>"</p>
-        </div>
-        <div class="slide">
-          <p><strong>Thomas O’neil Álvarez</strong> <span class="stars">★★★★★</span><br><small>ETHICAL HACKER | RED TEAM – 31 mayo 2025</small></p>
-          <p class="quote">"<em>Tuve el honor de coincidir con este pedazo de profesional hace poco más de un año... Se nota que ama lo que hace. Desde luego contar con Álvaro es signo de garantía.</em>"</p>
-        </div>
-      </div>
-    </section>
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: (Math.random() - 0.5) * 0.5,
+    radius: Math.random() * 2 + 1
+  });
+}
 
-    <section class="project">
-      <h2>Proyecto destacado</h2>
-      <div class="project-card">
-        <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
-        <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank" class="button">Ver proyecto</a>
-      </div>
-    </section>
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < particles.length; i++) {
+    let p = particles[i];
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(255,255,255,0.3)";
+    ctx.fill();
+    p.x += p.vx;
+    p.y += p.vy;
 
-    <section class="contact">
-      <h2>Contacto</h2>
-      <div class="contact-buttons">
-        <button onclick="window.open('https://ayesa.com', '_blank')">Sitio web</button>
-        <button onclick="window.open('mailto:alfercacha@hotmail.com')">Email</button>
-        <button onclick="revealPhone()">Teléfono</button>
-        <button onclick="window.open('https://www.linkedin.com/in/alvarofdezcachafeiro/', '_blank')">LinkedIn</button>
-        <button onclick="window.open('https://www.instagram.com/caacha97/', '_blank')">Instagram</button>
-      </div>
-      <p id="phone" class="phone-hidden">622 832 752</p>
-    </section>
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-    <footer>&copy; 2025 Álvaro Fernández Cachafeiro</footer>
-  </div>
+    for (let j = i + 1; j < particles.length; j++) {
+      let p2 = particles[j];
+      let dx = p.x - p2.x;
+      let dy = p.y - p2.y;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = "rgba(255,255,255,0.1)";
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
 
-  <script src="script.js"></script>
-</body>
-</html>
+// Recomendaciones en slider
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+  });
+  slides[index].classList.add("active");
+}
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 6000);
+
+// Mostrar teléfono
+function revealPhone() {
+  const phone = document.getElementById("phone");
+  phone.style.display = "block";
+}
