@@ -1,22 +1,19 @@
-const testimonios = document.querySelectorAll(".testimonio");
-let indiceActual = 0;
+let current = 0;
+const slides = document.querySelectorAll(".slide");
 
-function mostrarTestimonio(index) {
-  testimonios.forEach((t, i) => {
-    t.classList.toggle("active", i === index);
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
   });
 }
 
-document.getElementById("siguiente").addEventListener("click", () => {
-  indiceActual = (indiceActual + 1) % testimonios.length;
-  mostrarTestimonio(indiceActual);
-});
+function autoSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
 
-document.getElementById("anterior").addEventListener("click", () => {
-  indiceActual = (indiceActual - 1 + testimonios.length) % testimonios.length;
-  mostrarTestimonio(indiceActual);
-});
+setInterval(autoSlide, 6000); // Cambia de recomendación cada 6 segundos
 
-// Mostrar primero al cargar
-mostrarTestimonio(indiceActual);
+showSlide(current);
 
