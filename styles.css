@@ -1,98 +1,118 @@
-* {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0d0d0d;
-  color: white;
+  background: #0b0b0b;
+  color: #fff;
   overflow-x: hidden;
 }
+
 canvas#background-canvas {
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
 }
+
 .container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
   text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
 }
+
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 3px solid #f0db4f;
-  box-shadow: 0 0 20px #f0db4f;
+  box-shadow: 0 0 25px #f0db4f;
   object-fit: cover;
   margin-bottom: 1rem;
 }
-.subtitulo {
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  color: #ccc;
+
+h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
-.recomendaciones h2 {
+
+.subtitle {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.recommendation-box {
+  background: #111;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  box-shadow: 0 0 20px rgba(255, 255, 100, 0.1);
+  max-width: 700px;
+}
+
+.reco-name {
+  font-weight: bold;
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.reco-cargo {
+  font-style: italic;
+  color: #ccc;
+  font-size: 0.9rem;
   margin-bottom: 1rem;
 }
-.recommendation-box {
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 0 10px #f0db4f33;
-  margin-bottom: 2rem;
-}
-.reco-nombre {
+
+.stars {
   color: #f0db4f;
-  font-weight: bold;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
-.reco-texto {
-  font-style: italic;
-  color: #f2f2f2;
+
+.project-btn {
+  background-color: #f0db4f;
+  color: black;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
 }
+
+.project-btn:hover {
+  transform: scale(1.05);
+}
+
 .buttons-container {
+  margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.7rem;
-  margin: 1rem 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
+
 button, .social-btn {
   background-color: #f0db4f;
   border: none;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
-  text-decoration: none;
+  font-weight: bold;
   color: black;
-  transition: 0.3s ease;
-}
-button:hover, .social-btn:hover {
-  background-color: #fff176;
-  transform: scale(1.05);
-}
-footer {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #aaa;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
-  .recommendation-box {
-    font-size: 0.9rem;
-  }
-  .buttons-container {
-    flex-direction: column;
-    align-items: center;
-  }
+button:hover, .social-btn:hover {
+  transform: scale(1.05);
+  background-color: #fff27a;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #aaa;
+  font-size: 0.9rem;
 }
