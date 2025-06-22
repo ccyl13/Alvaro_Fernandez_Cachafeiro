@@ -4,43 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Álvaro Fernández Cachafeiro</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <canvas id="background-canvas"></canvas>
 
-  <div class="container">
-    <img src="perfil.JPG" alt="Álvaro Fernández Cachafeiro" class="profile-pic" />
+  <main>
+    <section class="profile">
+      <img src="perfil.JPG" alt="Álvaro Fernández" class="profile-img"/>
+      <h1>Álvaro Fernández Cachafeiro</h1>
+      <p class="subtitle">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
+    </section>
 
-    <h1>Álvaro Fernández Cachafeiro</h1>
-    <p class="subtitle">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
+    <section class="recommendations">
+      <h2>Recomendaciones</h2>
+      <div class="recommendation-box">
+        <div class="stars" id="stars">★★★★★</div>
+        <p id="recommendation-text"></p>
+        <div class="reco-meta">
+          <p id="reco-nombre"></p>
+          <p id="reco-cargo" class="reco-cargo"></p>
+          <p id="reco-fecha" class="reco-fecha"></p>
+        </div>
+      </div>
+    </section>
 
-    <h2>Recomendaciones</h2>
-    <div class="recommendation-box">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p id="recommendation-text"></p>
-      <p id="recommendation-name" class="reco-name"></p>
-      <p id="recommendation-position" class="reco-position"></p>
-    </div>
+    <section class="project">
+      <h2>Proyecto destacado</h2>
+      <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
+      <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank" class="project-btn">Ver proyecto</a>
+    </section>
 
-    <h2>Proyecto destacado</h2>
-    <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
-    <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank" class="project-btn">Ver proyecto</a>
+    <section class="contacto">
+      <h2>Contacto</h2>
+      <div class="buttons-container">
+        <button id="email-btn">Email</button>
+        <button id="phone-btn">Teléfono</button>
+        <a href="https://www.linkedin.com/in/alvarofernandezcachafeiro/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/alvaro.cachafeiro" target="_blank">Instagram</a>
+        <a href="https://www.ayesa.com" target="_blank">Sitio web</a>
+      </div>
+      <p id="email" style="display: none;">alfercacha@hotmail.com</p>
+      <p id="phone" style="display: none;">622 832 752</p>
+    </section>
+  </main>
 
-    <h2>Contacto</h2>
-    <div class="buttons-container">
-      <button id="email-btn">Email</button>
-      <button id="phone-btn">Teléfono</button>
-      <a href="https://www.linkedin.com/in/alvarofernandezcachafeiro/" target="_blank" class="social-btn">LinkedIn</a>
-      <a href="https://www.instagram.com/" target="_blank" class="social-btn">Instagram</a>
-      <a href="https://www.ayesa.com/" target="_blank" class="social-btn">Sitio web</a>
-    </div>
+  <footer>
+    © 2025 Álvaro Fernández Cachafeiro
+  </footer>
 
-    <p id="email" style="display:none;">alfercacha@hotmail.com</p>
-    <p id="phone" style="display:none;">622 832 752</p>
-
-    <footer>© 2025 Álvaro Fernández Cachafeiro</footer>
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
