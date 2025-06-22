@@ -1,3 +1,4 @@
+
 const recommendations = [
   {
     name: "Thomas O’Neil",
@@ -201,7 +202,7 @@ const positionEl = document.getElementById("recommendation-position");
 function showRecommendation(index) {
   const reco = recommendations[index];
   textEl.textContent = `“${reco.text}”`;
-  nameEl.textContent = reco.name;
+  nameEl.innerHTML = `⭐️⭐️⭐️⭐️⭐️ <strong>${reco.name}</strong>`;
   positionEl.textContent = `${reco.position} — ${reco.date}`;
 }
 
@@ -219,3 +220,33 @@ document.getElementById("email-btn").onclick = () => {
 document.getElementById("phone-btn").onclick = () => {
   alert(document.getElementById("phone").textContent);
 };
+
+// Fondo animado tipo ADN
+const canvas = document.getElementById("background-canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let angle = 0;
+
+function drawDNA() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  const amplitude = 80;
+  const frequency = 0.05;
+  const numLines = 60;
+
+  for (let i = 0; i < numLines; i++) {
+    const x = centerX + Math.sin(angle + i * frequency) * amplitude;
+    const y = i * (canvas.height / numLines);
+    ctx.beginPath();
+    ctx.arc(x, y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = "#f0db4f";
+    ctx.fill();
+  }
+
+  angle += 0.02;
+  requestAnimationFrame(drawDNA);
+}
+drawDNA();
