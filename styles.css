@@ -1,106 +1,121 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0d0d0d;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background-color: #0a0a0a;
   overflow-x: hidden;
 }
 
-img.profile-pic {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 20px #f0db4f;
-  margin-top: 20px;
+canvas#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-h1 {
-  font-size: 28px;
-  margin: 10px 0 5px;
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
   text-align: center;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px #fcd34d;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-size: 16px;
-  color: #ccc;
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 0 10px;
+  font-size: 1.1rem;
+  color: #fcd34d;
+  margin-top: -0.5rem;
 }
 
 .recommendation-box {
-  max-width: 90%;
-  background: #1a1a1a;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
 }
 
-#recommendation-text {
-  font-style: italic;
-  font-size: 16px;
-  line-height: 1.6;
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin: 1.5rem auto;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 0.7rem;
+  background-color: #fcd34d;
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
 #contacto {
-  margin-top: 30px;
-  text-align: center;
+  margin-top: 2rem;
 }
 
 .buttons-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-button {
-  background-color: #f0db4f;
-  border: none;
-  color: #000;
-  padding: 10px 18px;
-  font-size: 14px;
+#contacto button {
+  background-color: #1f1f1f;
+  color: white;
+  border: 1px solid #fcd34d;
+  padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #ffd60a;
-}
-
-#email,
-#phone {
-  display: none;
-  margin-top: 10px;
   font-weight: bold;
-  color: #f0db4f;
+  transition: background 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  img.profile-pic {
+#contacto button:hover {
+  background-color: #fcd34d;
+  color: #000;
+}
+
+#email, #phone {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fcd34d;
+}
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 600px) {
+  .profile-pic {
     width: 120px;
     height: 120px;
   }
 
-  h1 {
-    font-size: 22px;
-  }
-
   .recommendation-box {
-    padding: 15px;
+    font-size: 0.95rem;
   }
 
-  button {
-    padding: 8px 14px;
-    font-size: 13px;
+  .button, #contacto button {
+    width: 100%;
+    font-size: 1rem;
   }
 }
