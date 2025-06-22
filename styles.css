@@ -1,9 +1,11 @@
-body, html {
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0d0d0d;
-  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0e0e0e;
+  color: white;
+  text-align: center;
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -12,59 +14,63 @@ canvas#background-canvas {
   top: 0;
   left: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
 }
 
 main {
-  text-align: center;
-  padding: 4rem 1rem;
+  padding: 2rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.profile-pic {
-  width: 160px;
-  height: 160px;
+#perfil-img {
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 30px 5px #f0db4f;
-  margin-bottom: 1.5rem;
+  box-shadow: 0 0 30px #f0db4f;
+  margin-top: 2rem;
 }
 
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
+.descripcion {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 0.5rem;
 }
 
-.btn {
-  background: transparent;
+.redes a {
+  margin: 0 10px;
   color: #f0db4f;
-  border: 2px solid #f0db4f;
-  padding: 0.5rem 1.2rem;
   text-decoration: none;
-  border-radius: 10px;
-  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.redes a:hover {
+  transform: scale(1.1);
+  color: #ffffff;
 }
 
-.btn:hover {
-  background: #f0db4f;
+.botones-contacto button {
+  background-color: #f0db4f;
   color: #000;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.botones-contacto button:hover {
+  background-color: #fff176;
 }
 
 .recommendation-box {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 15px;
+  margin-top: 3rem;
   max-width: 600px;
-  margin: 2rem auto;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(240, 219, 79, 0.3);
 }
 
 #recommendation-text {
@@ -73,43 +79,37 @@ h1 {
   margin-bottom: 1rem;
 }
 
-#recommendation-name {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #fff;
-  margin-top: 0.5rem;
-}
-
-#recommendation-position {
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-bottom: 1rem;
-}
-
-.stars::before {
-  content: '★★★★★';
+.estrellas {
   color: #f0db4f;
   font-size: 1.3rem;
-  display: block;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
 }
 
-.contacto {
-  margin-top: 3rem;
+#recommendation-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
 }
 
+.position-date {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .profile-pic {
-    width: 120px;
-    height: 120px;
+  #perfil-img {
+    width: 130px;
+    height: 130px;
   }
 
   .recommendation-box {
-    margin: 1rem;
-    padding: 1.2rem;
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .redes a {
+    display: inline-block;
+    margin-bottom: 0.5rem;
   }
 }
