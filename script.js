@@ -1,3 +1,4 @@
+// Reseñas
 const recommendations = [
   { name: "Thomas O’Neil", text: "Tuve el honor de coincidir con este pedazo de profesional hace poco más de un año..." },
   { name: "Lola Fernández Fuentes", text: "Álvaro ha gestionado mi candidatura para un proceso de selección en Ayesa..." },
@@ -40,7 +41,7 @@ const nameElement = document.getElementById("reco-nombre");
 function showRecommendation(index) {
   const reco = recommendations[index];
   textElement.textContent = `“${reco.text}”`;
-  nameElement.textContent = `⭐ ${reco.name}`;
+  nameElement.innerHTML = `<span class="stars">⭐⭐⭐⭐⭐</span><br>${reco.name}`;
 }
 
 function nextRecommendation() {
@@ -51,14 +52,23 @@ function nextRecommendation() {
 setInterval(nextRecommendation, 5000);
 showRecommendation(currentIndex);
 
-document.getElementById("email-btn").onclick = () => {
-  alert(document.getElementById("email").textContent);
-};
-document.getElementById("phone-btn").onclick = () => {
-  alert(document.getElementById("phone").textContent);
-};
+// Botones de contacto
+const emailBtn = document.getElementById("email-btn");
+const phoneBtn = document.getElementById("phone-btn");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
 
-// Fondo animado ADN estilo canvas
+emailBtn.addEventListener("click", () => {
+  email.style.display = "block";
+  setTimeout(() => (email.style.display = "none"), 10000);
+});
+
+phoneBtn.addEventListener("click", () => {
+  phone.style.display = "block";
+  setTimeout(() => (phone.style.display = "none"), 10000);
+});
+
+// Fondo animado con canvas
 const canvas = document.getElementById('background-canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
