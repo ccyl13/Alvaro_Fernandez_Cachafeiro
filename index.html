@@ -2,48 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Álvaro Fernández Cachafeiro</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <canvas id="background"></canvas>
+  <canvas id="background-canvas"></canvas>
 
   <div class="container">
-    <!-- Perfil -->
-    <div class="profile">
-      <img src="perfil.JPG" alt="Foto de Álvaro" class="profile-pic" />
-      <h1>Álvaro Fernández Cachafeiro</h1>
-      <p class="subtitle">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
-    </div>
+    <img src="perfil.JPG" alt="Álvaro Fernández Cachafeiro" class="profile-img" />
+    <h1>Álvaro Fernández Cachafeiro</h1>
+    <p class="subtitulo">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
 
-    <!-- Caja de recomendación -->
-    <div class="recommendation-box">
-      <p id="recommendation-text"></p>
-    </div>
-
-    <!-- Proyecto destacado -->
-    <section class="project">
-      <h2>Proyecto destacado</h2>
-      <div class="project-card">
-        <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
-        <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank" class="button">Ver proyecto</a>
+    <section class="recomendaciones">
+      <h2>Recomendaciones</h2>
+      <div class="recommendation-box">
+        <p class="reco-nombre" id="reco-nombre">⭐ Thomas O’Neil</p>
+        <p class="reco-texto" id="recommendation-text"></p>
       </div>
     </section>
 
-    <!-- Contacto -->
-    <div id="contacto">
+    <section>
+      <h2>Proyecto destacado</h2>
+      <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
+      <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank">Ver proyecto</a>
+    </section>
+
+    <section id="contacto">
       <h2>Contacto</h2>
       <div class="buttons-container">
         <button id="email-btn">Email</button>
         <button id="phone-btn">Teléfono</button>
+        <a href="https://www.linkedin.com/in/alvarofernandezcachafeiro/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://www.instagram.com/alvarofernandezcachafeiro/" target="_blank" class="social-btn">Instagram</a>
+        <a href="https://www.ayesa.com" target="_blank" class="social-btn">Sitio web</a>
       </div>
       <p id="email" style="display:none;">alfercacha@hotmail.com</p>
       <p id="phone" style="display:none;">622 832 752</p>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>&copy; 2025 Álvaro Fernández Cachafeiro</footer>
+    <footer>
+      <p>© 2025 Álvaro Fernández Cachafeiro</p>
+    </footer>
   </div>
 
   <script src="script.js"></script>
