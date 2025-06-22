@@ -1,4 +1,3 @@
-
 const recommendations = [
   {
     name: "Thomas O’Neil",
@@ -194,16 +193,20 @@ const recommendations = [
   }
 ];
 
-let currentIndex = 0;
+// DOM
+const starsEl = document.getElementById("recommendation-stars");
 const textEl = document.getElementById("recommendation-text");
 const nameEl = document.getElementById("recommendation-name");
 const positionEl = document.getElementById("recommendation-position");
 
+let currentIndex = 0;
+
 function showRecommendation(index) {
-  const reco = recommendations[index];
-  textEl.textContent = `“${reco.text}”`;
-  nameEl.innerHTML = `⭐️⭐️⭐️⭐️⭐️ <strong>${reco.name}</strong>`;
-  positionEl.textContent = `${reco.position} — ${reco.date}`;
+  const r = recommendations[index];
+  starsEl.innerHTML = "★".repeat(5);
+  textEl.textContent = `“${r.text}”`;
+  nameEl.textContent = r.name;
+  positionEl.textContent = `${r.position} — ${r.date}`;
 }
 
 setInterval(() => {
@@ -213,7 +216,7 @@ setInterval(() => {
 
 showRecommendation(currentIndex);
 
-// Mostrar email/teléfono
+// Botones de contacto
 document.getElementById("email-btn").onclick = () => {
   alert(document.getElementById("email").textContent);
 };
@@ -221,32 +224,44 @@ document.getElementById("phone-btn").onclick = () => {
   alert(document.getElementById("phone").textContent);
 };
 
-// Fondo animado tipo ADN
+// Canvas ADN
 const canvas = document.getElementById("background-canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let angle = 0;
+let t = 0;
 
 function drawDNA() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   const centerX = canvas.width / 2;
-  const centerY = canvas.height / 2;
   const amplitude = 80;
-  const frequency = 0.05;
-  const numLines = 60;
+  const wavelength = 0.04;
+  const speed = 0.05;
 
-  for (let i = 0; i < numLines; i++) {
-    const x = centerX + Math.sin(angle + i * frequency) * amplitude;
-    const y = i * (canvas.height / numLines);
+  for (let y = 0; y < canvas.height; y += 12) {
+    const x1 = centerX + Math.sin(t + y * wavelength) * amplitude;
+    const x2 = centerX - Math.sin(t + y * wavelength) * amplitude;
+
     ctx.beginPath();
-    ctx.arc(x, y, 2, 0, Math.PI * 2);
+    ctx.arc(x1, y, 2, 0, 2 * Math.PI);
     ctx.fillStyle = "#f0db4f";
     ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(x2, y, 2, 0, 2 * Math.PI);
+    ctx.fillStyle = "#f0db4f";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y);
+    ctx.lineTo(x2, y);
+    ctx.strokeStyle = "rgba(240, 219, 79, 0.15)";
+    ctx.stroke();
   }
 
-  angle += 0.02;
+  t += speed;
   requestAnimationFrame(drawDNA);
 }
+
 drawDNA();
