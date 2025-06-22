@@ -1,10 +1,11 @@
-body, html {
+body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0b0b0b;
+  background: #0a0a0a;
   color: #fff;
   overflow-x: hidden;
+  text-align: center;
 }
 
 canvas#background-canvas {
@@ -15,9 +16,8 @@ canvas#background-canvas {
 }
 
 .container {
-  text-align: center;
-  padding: 2rem;
-  max-width: 900px;
+  padding: 40px 20px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -25,94 +25,103 @@ canvas#background-canvas {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  box-shadow: 0 0 25px #f0db4f;
   object-fit: cover;
-  margin-bottom: 1rem;
+  box-shadow: 0 0 25px #f0db4f;
+  margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin: 0.5rem 0;
+  font-size: 2em;
+  font-weight: bold;
 }
 
-.subtitle {
+.subtitulo {
+  font-size: 0.95em;
   color: #ccc;
-  font-size: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #fff;
 }
 
 .recommendation-box {
-  background: #111;
+  background-color: #1a1a1a;
   border-radius: 15px;
-  padding: 1.5rem;
-  margin: 1rem auto;
-  box-shadow: 0 0 20px rgba(255, 255, 100, 0.1);
-  max-width: 700px;
-}
-
-.reco-name {
-  font-weight: bold;
-  color: white;
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-}
-
-.reco-cargo {
-  font-style: italic;
-  color: #ccc;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  padding: 25px;
+  margin: 20px auto;
+  box-shadow: 0 0 15px #333;
 }
 
 .stars {
   color: #f0db4f;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3em;
+  margin-bottom: 8px;
 }
 
-.project-btn {
-  background-color: #f0db4f;
-  color: black;
-  padding: 0.5rem 1.2rem;
-  border-radius: 10px;
-  text-decoration: none;
+#recommendation-text {
+  font-style: italic;
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+
+.reco-nombre {
   font-weight: bold;
+  color: #fff;
+  margin: 5px 0;
+}
+
+.reco-cargo {
+  font-size: 0.9em;
+  color: #999;
+}
+
+.project-button {
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background-color: #f0db4f;
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
   transition: transform 0.3s ease;
 }
 
-.project-btn:hover {
+.project-button:hover {
   transform: scale(1.05);
 }
 
 .buttons-container {
-  margin-top: 1rem;
+  margin-top: 20px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 10px;
 }
 
-button, .social-btn {
+button,
+.social-btn {
   background-color: #f0db4f;
+  color: #000;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 10px 16px;
   border-radius: 8px;
-  cursor: pointer;
   font-weight: bold;
-  color: black;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
 }
 
-button:hover, .social-btn:hover {
+button:hover,
+.social-btn:hover {
   transform: scale(1.05);
-  background-color: #fff27a;
+  box-shadow: 0 0 10px #f0db4f;
 }
 
 footer {
-  margin-top: 2rem;
-  color: #aaa;
-  font-size: 0.9rem;
+  margin-top: 40px;
+  font-size: 0.85em;
+  color: #ccc;
 }
