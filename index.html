@@ -2,57 +2,114 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Álvaro Fernández Cachafeiro</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <canvas id="background-canvas"></canvas>
-
   <main>
-    <section class="profile">
-      <img src="perfil.JPG" alt="Álvaro Fernández" class="profile-img"/>
-      <h1>Álvaro Fernández Cachafeiro</h1>
-      <p class="subtitle">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
-    </section>
+    <img src="perfil.JPG" alt="Foto de Álvaro" class="profile-pic" />
+    <h1>Álvaro Fernández Cachafeiro</h1>
+    <p>Consultor de Recursos Humanos | Experto en selección de personal IT</p>
 
-    <section class="recommendations">
+    <section class="recommendation-box">
       <h2>Recomendaciones</h2>
-      <div class="recommendation-box">
-        <div class="stars" id="stars">★★★★★</div>
-        <p id="recommendation-text"></p>
-        <div class="reco-meta">
-          <p id="reco-nombre"></p>
-          <p id="reco-cargo" class="reco-cargo"></p>
-          <p id="reco-fecha" class="reco-fecha"></p>
-        </div>
-      </div>
+      <div class="stars"></div>
+      <p id="recommendation-text"></p>
+      <p id="recommendation-name"></p>
+      <p id="recommendation-position"></p>
     </section>
 
-    <section class="project">
+    <section>
       <h2>Proyecto destacado</h2>
       <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
-      <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank" class="project-btn">Ver proyecto</a>
+      <a class="btn" href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" target="_blank">Ver proyecto</a>
     </section>
 
     <section class="contacto">
       <h2>Contacto</h2>
       <div class="buttons-container">
-        <button id="email-btn">Email</button>
-        <button id="phone-btn">Teléfono</button>
-        <a href="https://www.linkedin.com/in/alvarofernandezcachafeiro/" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com/alvaro.cachafeiro" target="_blank">Instagram</a>
-        <a href="https://www.ayesa.com" target="_blank">Sitio web</a>
+        <button class="btn" id="email-btn">Email</button>
+        <button class="btn" id="phone-btn">Teléfono</button>
+        <a class="btn" href="https://www.linkedin.com/in/alvarofernandezcachafeiro/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://www.instagram.com/alvarofernandezcachafeiro/" target="_blank">Instagram</a>
+        <a class="btn" href="https://www.ayesa.com" target="_blank">Sitio web</a>
       </div>
-      <p id="email" style="display: none;">alfercacha@hotmail.com</p>
-      <p id="phone" style="display: none;">622 832 752</p>
+      <p id="email" style="display:none;">alfercacha@hotmail.com</p>
+      <p id="phone" style="display:none;">622 832 752</p>
     </section>
+    <footer>
+      <p>&copy; 2025 Álvaro Fernández Cachafeiro</p>
+    </footer>
   </main>
 
-  <footer>
-    © 2025 Álvaro Fernández Cachafeiro
-  </footer>
-
   <script src="script.js"></script>
+  <script>
+    const canvas = document.getElementById("background-canvas");
+    const ctx = canvas.getContext("2d");
+    let particlesArray;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener("resize", function () {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    class Particle {
+      constructor(x, y, directionX, directionY, size, color) {
+        this.x = x;
+        this.y = y;
+        this.directionX = directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+      update() {
+        if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+          this.directionX = -this.directionX;
+        }
+        if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+          this.directionY = -this.directionY;
+        }
+        this.x += this.directionX;
+        this.y += this.directionY;
+        this.draw();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      let numberOfParticles = (canvas.height * canvas.width) / 9000;
+      for (let i = 0; i < numberOfParticles; i++) {
+        let size = Math.random() * 2;
+        let x = Math.random() * (canvas.width - size * 2);
+        let y = Math.random() * (canvas.height - size * 2);
+        let directionX = (Math.random() - 0.5) * 0.5;
+        let directionY = (Math.random() - 0.5) * 0.5;
+        let color = "rgba(255, 255, 255, 0.3)";
+        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+    }
+
+    init();
+    animate();
+  </script>
 </body>
 </html>
