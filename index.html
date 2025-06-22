@@ -2,45 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Álvaro Fernández Cachafeiro</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <canvas id="background-canvas"></canvas>
+
   <div class="container">
     <img src="perfil.JPG" alt="Álvaro Fernández Cachafeiro" class="profile-img" />
+
     <h1>Álvaro Fernández Cachafeiro</h1>
-    <p class="subtitle">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
+    <p class="subtitulo">Consultor de Recursos Humanos | Experto en selección de personal IT</p>
 
     <h2>Recomendaciones</h2>
     <div class="recommendation-box">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <div id="reco-nombre" class="reco-name"></div>
-      <div id="reco-cargo" class="reco-cargo"></div>
+      <div class="stars">★★★★★</div>
       <p id="recommendation-text"></p>
+      <p id="reco-nombre" class="reco-nombre"></p>
+      <p id="reco-cargo" class="reco-cargo"></p>
     </div>
 
     <h2>Proyecto destacado</h2>
     <p>Colaborador en el <strong>curso de marca personal de Thomas O’Neil</strong>, N.º 1 de LinkedIn en España.</p>
-    <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" class="project-btn" target="_blank">Ver proyecto</a>
+    <a href="https://www.elrincondelhacker.es/pagina-de-ventas-linkedin/" class="project-button" target="_blank">Ver proyecto</a>
 
     <h2>Contacto</h2>
     <div class="buttons-container">
       <button id="email-btn">Email</button>
       <button id="phone-btn">Teléfono</button>
-      <a href="https://www.linkedin.com/in/alfercacha/" target="_blank" class="social-btn">LinkedIn</a>
-      <a href="https://www.instagram.com/alfercacha/" target="_blank" class="social-btn">Instagram</a>
+      <a href="https://www.linkedin.com/in/alvarofernandezcachafeiro/" target="_blank" class="social-btn">LinkedIn</a>
+      <a href="https://www.instagram.com/alvarofernandezcachafeiro/" target="_blank" class="social-btn">Instagram</a>
       <a href="https://www.ayesa.com" target="_blank" class="social-btn">Sitio web</a>
     </div>
-
-    <p id="email" style="display:none;">alfercacha@hotmail.com</p>
-    <p id="phone" style="display:none;">622 832 752</p>
-
-    <footer>
-      <p>&copy; 2025 Álvaro Fernández Cachafeiro</p>
-    </footer>
   </div>
+
+  <!-- Datos ocultos -->
+  <p id="email" style="display:none;">alfercacha@hotmail.com</p>
+  <p id="phone" style="display:none;">622 832 752</p>
+
+  <footer>
+    <p>&copy; 2025 Álvaro Fernández Cachafeiro</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
